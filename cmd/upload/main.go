@@ -41,7 +41,7 @@ func main() {
 		panic(err)
 	}
 
-	// ------- upload ------file, err := os.Open(filename)
+	// ------- upload ------
 
 	file, err := os.Open("a_10mb.csv")
 
@@ -59,13 +59,12 @@ func main() {
 
 	targetFolder := "1LxEjCsKJV9eQNiDbkRSrWVRlIUn5kIP_"
 
-	// Create File metadata
+	// file metadata
 	f := &drive.File{
 		Name:    info.Name(),
 		Parents: []string{targetFolder},
 	}
 
-	// Create and upload the file
 	_, err = srv.Files.
 		Create(f).
 		Context(ctx).
